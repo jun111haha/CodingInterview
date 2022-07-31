@@ -10,9 +10,8 @@ public class 폰켓몬 {
 
     }
 
-    // 중복을 제거한 셋의 크기가 max보다 크면 max를, 작으면 numsSet의 size를 리턴
+    // 중복을 제거한 셋의 크기가 max보다 크면 max를 리턴 작으면 hashSet size를 리턴
     public static int solution(int[] nums) {
-        int answer = 0;
         int max  = nums.length / 2;
 
         HashSet<Integer> hashSet = new HashSet<>();
