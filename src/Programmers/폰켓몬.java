@@ -1,6 +1,5 @@
 package Programmers;
 
-import java.util.HashMap;
 import java.util.HashSet;
 
 public class 폰켓몬 {
