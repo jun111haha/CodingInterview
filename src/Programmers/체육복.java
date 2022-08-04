@@ -23,8 +23,9 @@ public class 체육복 {
         System.out.println(Arrays.toString(people));
 
         for(int i = 0; i< people.length; i++){
+            //잃어버리기만 한사람
             if(people[i] == -1){
-                //i-1 >= 0 index 오류 방지 잃어버리기만 한사람
+                //i-1 >= 0 index 오류 방지 여분이 남는사람
                 if(i-1 >= 0 && people[i-1] == 1){
                     people[i]++;
                     people[i-1]--;
@@ -39,6 +40,7 @@ public class 체육복 {
             }
         }
 
+        System.out.println(Arrays.toString(people));
         return answer;
     }
 
