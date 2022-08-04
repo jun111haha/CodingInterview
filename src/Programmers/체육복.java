@@ -6,7 +6,7 @@ public class 체육복 {
     public static void main(String[] args) {
         int n = 5;
         int [] lost = {2,4};
-        int [] reserve = {1,3,5};
+        int [] reserve = {3};
         System.out.println(solution(n, lost,  reserve));
     }
     public static int solution(int n, int[] lost, int[] reserve) {
@@ -24,11 +24,11 @@ public class 체육복 {
 
         for(int i = 0; i< people.length; i++){
             if(people[i] == -1){
-                //잃어버리기만 한사람
+                //i-1 >= 0 index 오류 방지 잃어버리기만 한사람
                 if(i-1 >= 0 && people[i-1] == 1){
                     people[i]++;
                     people[i-1]--;
-                //여분이 남는사람
+                //i+1 < people.length index 오류 방지 여분이 남는사람
                 }else if(i+1 < people.length && people[i+1] == 1){
                     people[i]++;
                     people[i+1]--;
