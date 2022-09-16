@@ -24,7 +24,6 @@ public class 이상한문자만들기 {
 
             answer += strArray[i];
         }
-
         return answer;
     }
 }
