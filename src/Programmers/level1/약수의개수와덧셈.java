@@ -1,4 +1,4 @@
-package Programmers;
+package Programmers.level1;
 
 public class 약수의개수와덧셈 {
     public static void main(String[] args) {

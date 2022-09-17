@@ -1,4 +1,4 @@
-package Programmers;
+package Programmers.level1;
 
 public class 이상한문자만들기 {
     public static void main(String[] args) {

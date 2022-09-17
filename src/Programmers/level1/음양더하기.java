@@ -1,4 +1,4 @@
-package Programmers;
+package Programmers.level1;
 
 public class 음양더하기 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Programmers;
+package Programmers.level1;
 
 public class K번쨰수퀵정렬구현 {
     public static void main(String[] args) {
