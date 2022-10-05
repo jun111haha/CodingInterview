@@ -3,6 +3,23 @@ package solved.자료구조.Gold;
 import java.io.*;
 import java.util.*;
 
+/*
+입력
+4
+RDD
+4
+[1,2,3,4]
+DD
+1
+[42]
+RRD
+6
+[1,1,2,3,5,8]
+D
+0
+[]
+*
+* */
 public class AC {
     static ArrayDeque<Integer> deque;
     static StringBuilder sb = new StringBuilder();
