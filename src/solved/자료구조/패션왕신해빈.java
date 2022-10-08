@@ -7,6 +7,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
 
+/*
+2
+3
+hat headgear
+sunglasses eyewear
+turban headgear
+3
+mask face
+sunglasses face
+makeup face
+* */
 public class 패션왕신해빈 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -23,10 +34,13 @@ public class 패션왕신해빈 {
                 String key = st.nextToken();
                 hashMap.put(key, hashMap.getOrDefault(key, 0) + 1);
             }
+
             int cnt = 1;
+            //의상 조합 구하기
             for(Map.Entry<String,Integer> entry : hashMap.entrySet()){
                 cnt = cnt * (entry.getValue() + 1);
             }
+            //위에서 cnt = 1 이므로 -1 해줘야함.
             sb.append(cnt -1 + "\n");
         }
         System.out.println(sb);
