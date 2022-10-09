@@ -6,7 +6,14 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
-
+/*
+4 5 1
+1 2
+1 3
+1 4
+2 4
+3 4
+* */
 public class DFS와BFS {
     static StringBuilder sb = new StringBuilder();
     static boolean[] check;
@@ -45,10 +52,13 @@ public class DFS와BFS {
     }
 
     public static void dfs(int start){
+        //현재 노드를 방문처리
         check[start] = true;
+        //방문한 노드를 출력
         sb.append(start + " ");
 
         for(int i =0; i <=node; i++){
+            //탐색하지않은 노드
             if(arr[start][i] == 1 && !check[i]){
                 dfs(i);
             }
@@ -63,6 +73,7 @@ public class DFS와BFS {
             sb.append(start + " ");
 
             for(int i =1; i<=node; i++){
+                //간선이 있고 탐색하지않은 노드
                 if(arr[start][i] == 1 && !check[i]){
                     q.add(i);
                     check[i] = true;
