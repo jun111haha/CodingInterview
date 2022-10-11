@@ -32,6 +32,7 @@ public class 단지번호붙이기 {
     //범위를 계산한 좌표
     static int nowX, nowY;
     static int N;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -42,7 +43,7 @@ public class 단지번호붙이기 {
         for(int i=0; i<N; i++){
             String str = br.readLine();
             for(int j=0; j<N; j++){
-                arr[i][j] = str.charAt(j)-'0';
+                arr[i][j] = Character.getNumericValue(str.charAt(j));
             }
         }
 
@@ -65,6 +66,7 @@ public class 단지번호붙이기 {
         }
         System.out.println(sb);
     }
+
     public static void dfs(int x, int y){
         visit[x][y] = true;
         arr[x][y] = number;
