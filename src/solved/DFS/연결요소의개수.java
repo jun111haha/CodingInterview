@@ -4,7 +4,18 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
+/*
+11724번
+6 8
+1 2
+2 5
+5 1
+3 4
+4 6
+5 4
+2 4
+2 3
+* */
 public class 연결요소의개수 {
     static int N;
     static int M;
