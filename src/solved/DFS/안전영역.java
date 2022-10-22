@@ -38,6 +38,11 @@ public class 안전영역 {
         }
 
         list = new ArrayList<>();
+        /*
+        * 비가와서 잠기는 영역을 depth 로 지정
+        * 아직 방문하지 않는곳을 안전영역을 생성한다.
+        * dfs 호출횟수가 안전영역의 갯수 이 값을 리스트에 담고 최댓값을 뽑는다.
+        * */
         for(int depth =0; depth<=maxArr; depth++){
             int count = 0;
             for(int i =0; i<testCase; i++){
@@ -48,8 +53,10 @@ public class 안전영역 {
                     }
                 }
             }
-            for(boolean a[]: visit){
-                Arrays.fill(a, false);
+
+            for(boolean isCheck[]: visit){
+                //fill() 배열을 채우는 자바 11 메서드
+                Arrays.fill(isCheck, false);
             }
 
             list.add(count);
