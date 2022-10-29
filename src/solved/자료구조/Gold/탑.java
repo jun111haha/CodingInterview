@@ -14,6 +14,10 @@ public class 탑 {
         StringTokenizer st = new StringTokenizer(br.readLine());
         Stack<int []> stack = new Stack<>();
         for(int i =1; i<=n; i++){
+            /*
+            * 입력 받은 높이 값이 현재 높이값 보다 낮으면 해당 탑에는 레이저가 닿을수 없음 pop 처리
+            * 스택이 비어있다면 레이저가 닿을 수 있는 탑이 없다는 의미로 0을 출력
+            * */
             int top = Integer.parseInt(st.nextToken());
             while (!stack.isEmpty()){
                 if(stack.peek()[1] >= top){
