@@ -1,6 +1,7 @@
 package Programmers.level1;
 
-import java.util.Arrays;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class 햄버거만들기 {
     public static void main(String[] args) {
@@ -10,16 +11,16 @@ public class 햄버거만들기 {
     }
     public static int solution(int[] ingredient) {
         int answer = 0;
-        String ingredientString = Arrays.toString(ingredient)
-                .replace("[","")
-                .replace("]","")
-                .replaceAll(", ","");
+        String str = Arrays.stream(ingredient)
+                    .mapToObj(String::valueOf)
+                    .collect(Collectors.joining());
 
-        while (ingredientString.contains("1231")){
-            ingredientString = ingredientString.replaceFirst("1231", "");
+        while (str.contains("1231")){
+            str = str.replaceFirst("1231", "");
             answer++;
         }
 
         return answer;
     }
 }
+
