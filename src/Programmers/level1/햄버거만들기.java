@@ -10,16 +10,19 @@ public class 햄버거만들기 {
 
     }
     public static int solution(int[] ingredient) {
+        int[] stack = new int[ingredient.length];
+        int sp = 0;
         int answer = 0;
-        String str = Arrays.stream(ingredient)
-                    .mapToObj(String::valueOf)
-                    .collect(Collectors.joining());
-
-        while (str.contains("1231")){
-            str = str.replaceFirst("1231", "");
-            answer++;
+        for (int i : ingredient) {
+            stack[sp++] = i;
+            if (sp >= 4 && stack[sp - 1] == 1
+                    && stack[sp - 2] == 3
+                    && stack[sp - 3] == 2
+                    && stack[sp - 4] == 1) {
+                sp -= 4;
+                answer++;
+            }
         }
-
         return answer;
     }
 }
