@@ -29,4 +29,21 @@ public class 과일장수 {
                 .reduce(Integer::sum)
                 .getAsInt() * m;
     }
+    
+    /*
+        public int solution(int k, int m, int[] score) {
+        int answer = 0;
+        Integer[] arr = Arrays.stream(score).boxed().toArray(Integer[]::new);
+        Arrays.sort(arr, Collections.reverseOrder());
+
+        for(int i=0; i<arr.length;i++){
+            if(i<(m*(arr.length/m))){
+                if(i%m==m-1){
+                    answer+=arr[i]*m;
+                }
+            }
+        }
+        return answer;
+    }
+    */
 }
