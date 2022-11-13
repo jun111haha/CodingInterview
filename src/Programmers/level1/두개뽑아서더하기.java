@@ -6,9 +6,9 @@ import java.util.Iterator;
 
 public class 두개뽑아서더하기 {
     public static void main(String[] args) {
-
         int [] nums = {2,1,3,4,1};
-        System.out.println(solution(nums));
+        int [] num = solution(nums);
+        System.out.println(Arrays.toString(num));
 
     }
 
