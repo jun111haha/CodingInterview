@@ -10,12 +10,12 @@ public class 카펫 {
     public static int[] solution(int brown, int yellow) {
         int[] answer = new int[2];
 
-        int area = brown + yellow; //전체 갯수
+        int sum = brown + yellow; //전체 갯수
 
         //행과 열의 갯수는 3이상이여야 합니다.
-        for (int i=3; i<=area; i++) {
+        for (int i=3; i<=sum; i++) {
             int col = i;             // 열
-            int row = area / col;    // 행
+            int row = sum / col;    // 행
 
             //행의 갯수가 3이하이면 패스합니다.
             if(row < 3){
