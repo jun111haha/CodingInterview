@@ -2,8 +2,8 @@ package Programmers.level2;
 
 public class 카펫 {
     public static void main(String[] args) {
-        int brown = 10;
-        int yellow = 2;
+        int brown = 8;
+        int yellow = 1;
         System.out.println(solution(brown, yellow));
     }
 
@@ -26,7 +26,7 @@ public class 카펫 {
 
             //행은 열보다 크거나 같아야 합니다.
             if(row>= col) {
-                //문제의 규칙에 의하면 row-2*col-2 = yellow 입니다.
+                //문제의 규칙에 의하면 row-2 * col-2 = yellow 입니다.
                 if((row - 2) * (col - 2) == yellow) {
                     answer[0] = row;
                     answer[1] = col;
