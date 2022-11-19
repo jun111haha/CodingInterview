@@ -22,9 +22,6 @@ public class 구명보트 {
                 cnt++; //혼자 구명보트 탄것으로 처리
             }
         }
-
-
-
         return cnt;
     }
 }
