@@ -5,6 +5,17 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
+/*
+20
+7
+23
+19
+10
+15
+25
+8
+13
+* */
 public class 일곱난쟁이 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
