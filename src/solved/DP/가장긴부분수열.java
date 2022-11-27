@@ -3,6 +3,7 @@ package solved.DP;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class 가장긴부분수열 {
@@ -23,6 +24,7 @@ public class 가장긴부분수열 {
             int max = 0;
             //i 전 까지 도는 반복문
             for(int j =i-1; j>=0; j--){
+                // j번째 원소가 i번째 원소보다 작으면서 i번째 dp가 max 보다 큰경우
                 if(arr[j] < arr[i] && dp[j] > max){
                     //dy[j] 의 최대길이의 값
                     max = dp[j];
@@ -33,6 +35,15 @@ public class 가장긴부분수열 {
             answer = Math.max(answer, dp[i]);
         }
 
+        /*
+        dp[0] = {10} : 길이 1
+        dp[1] = {10, 20} : 길이 2
+        dp[2] = {10} : 길이 1
+        dp[3] = {10, 20, 30} : 길이 3
+        dp[4] = {10, 20} : 길이 2
+        dp[5] = {10, 20, 30, 50} : 길이 4
+        * */
+        System.out.println(Arrays.toString(dp));
         System.out.println(answer);
     }
 }
