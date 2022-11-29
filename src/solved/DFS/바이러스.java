@@ -6,8 +6,8 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class 바이러스 {
-    static boolean[] check;
     static int[][] arr;
+    static boolean[] check;
     static int com;
     static int cnt;
     static int line;
