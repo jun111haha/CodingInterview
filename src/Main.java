@@ -38,8 +38,6 @@ public class Main {
             if(isCheck[i] == false && arr[start][i] == 1){
                 dfs(i);
             }
-
         }
-
     }
 }
