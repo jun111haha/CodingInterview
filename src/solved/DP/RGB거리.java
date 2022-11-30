@@ -32,7 +32,11 @@ public class RGB거리 {
         }
 
         System.out.println(Arrays.deepToString(color));
-        // [[26, 40, 83], [49, 60, 57], [13, 89, 99]]
+        // {
+        //   [26, 40, 83],
+        //   [49, 60, 57],
+        //   [13, 89, 99]
+        // }
 
         for(int i =1; i<N; i++){
             color[i][Red] += Math.min(color[i - 1][Green], color[i - 1][Blue]);
@@ -42,7 +46,10 @@ public class RGB거리 {
         }
 
         System.out.println(Arrays.deepToString(color));
-        // [[26, 40, 83], [89, 86, 83], [96, 172, 185]]
+        // {
+        //  [26, 40, 83]
+        // ,[89, 86, 83]
+        // ,[96, 172, 185] }
 
         colorSum = Math.min(Math.min(color[N - 1][Red], color[N - 1][Green]), color[N - 1][Blue]);
         System.out.println(colorSum);
