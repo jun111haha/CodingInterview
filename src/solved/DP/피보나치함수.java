@@ -3,7 +3,6 @@ package solved.DP;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 public class 피보나치함수 {
     public static void main(String[] args) throws IOException {
