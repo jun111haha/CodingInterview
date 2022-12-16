@@ -40,7 +40,7 @@ public class RGB거리 {
 
         int colorSum = Math.min(Math.min(color[testCase - 1][Red], color[testCase - 1][Green]), color[testCase - 1][Blue]);
         System.out.println("after " + Arrays.deepToString(color));
-        System.out.println(colorSum);
+        System.out.println("sum" + colorSum);
 
     }
 }
