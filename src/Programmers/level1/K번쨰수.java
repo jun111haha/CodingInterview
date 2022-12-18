@@ -19,16 +19,19 @@ public class K번쨰수 {
     * */
     public static int[] solution(int[] array, int[][] commands) {
         int[] answer = new int[commands.length];
-        for(int i =0; i<commands.length; i++){
-            int [] arrTemp = Arrays.copyOfRange(array, commands[i][0] - 1, commands[i][1]);
-            Arrays.sort(arrTemp);
-            answer[i] = arrTemp[commands[i][2] - 1];
+        int a = 0;
+        for(int[] info : commands){
+            int i = info[0];
+            int j = info[1];
+            int k = info[2];
+
+            int[] buf = Arrays.copyOfRange(array,i - 1, j);
+            Arrays.sort(buf);
+            answer[a] = buf[k - 1];
+            a++;
         }
 
+        System.out.println(Arrays.toString(answer));
         return answer;
     }
-
-
-
-
 }
