@@ -35,7 +35,9 @@ public class 가장긴증가하는부분수열 {
             dp[i] = max + 1;
             answer = Math.max(answer, dp[i]);
         }
+
         System.out.println(Arrays.toString(dp));
+        //[0, 1, 2, 1, 3, 2, 4]
         System.out.println(answer);
     }
 }
