@@ -1,4 +1,4 @@
-package solved.자료구조.blonze;
+package solved.자료구조.silver;
 
 import java.io.BufferedReader;
 import java.io.IOException;

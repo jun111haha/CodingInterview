@@ -31,8 +31,8 @@ public class 국회의원선거 {
             arr[0]++;
             arr[max]--;
             answer++;
-
         }
+
         System.out.println(answer);
     }
 }
