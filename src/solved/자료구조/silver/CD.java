@@ -53,7 +53,7 @@ public class CD {
 
             System.out.println(count_n);
             System.out.println(count_m);
-            System.out.println(answer);
+            System.out.println(answer); //2
         }
     }
 }
