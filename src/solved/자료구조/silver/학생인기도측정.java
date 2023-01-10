@@ -5,6 +5,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
+/*
+4
+aaa bbb ccc ddd
+bbb ddd
+aaa ddd
+aaa
+aaa bbb
+* */
 public class 학생인기도측정 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -27,6 +35,8 @@ public class 학생인기도측정 {
             }
         }
         List<Map.Entry<String, Integer>> list = new LinkedList<>(hashMap.entrySet());
+        System.out.println(list);
+        //[aaa=3, bbb=2, ccc=0, ddd=2]
         Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
             @Override
             public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
@@ -44,6 +54,13 @@ public class 학생인기도측정 {
             String temp = String.valueOf(list.get(i));
             sb.append(temp.replaceAll("=", " ") + "\n");
         }
+
+        /*
+        aaa 3
+        bbb 2
+        ddd 2
+        ccc 0
+        * */
         System.out.println(sb);
     }
 }
