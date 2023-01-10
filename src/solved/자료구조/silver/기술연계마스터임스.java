@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
+
 /*
 5
 S12K2
@@ -17,8 +18,7 @@ public class 기술연계마스터임스 {
         String str = br.readLine();
         Stack<Character> stack = new Stack<>();
         Stack<Character> stack1 = new Stack<>();
-
-        int cnt = 0;
+        int answer = 0;
         for(int i=0; i<tc; i++){
             char c = str.charAt(i);
             if(c == 'S'){
@@ -27,23 +27,23 @@ public class 기술연계마스터임스 {
                 stack1.push(c);
             }else if(c == 'K'){
                 if (!stack.isEmpty()){
+                    answer++;
                     stack.pop();
-                    cnt ++;
                 }else{
                     break;
                 }
             }else if(c == 'R'){
                 if(!stack1.isEmpty()){
-                    stack.pop();
-                    cnt ++;
+                    answer++;
+                    stack1.pop();
                 }else {
                     break;
                 }
             }else {
-                cnt ++;
+                answer++;
             }
         }
 
-        System.out.println(cnt);
+        System.out.println(answer);
     }
 }
