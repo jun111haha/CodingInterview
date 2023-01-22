@@ -19,8 +19,7 @@ public class 카드 {
             return;
         }else{
             deque.addFirst(tc - 1);
-            while (true){
-                tc --;
+            while (tc-->0){
                 for(int i=tc; i>0; i--){
                     int last = deque.peekLast();
                     deque.addFirst(last);
