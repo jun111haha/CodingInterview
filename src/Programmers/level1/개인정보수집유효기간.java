@@ -1,14 +1,12 @@
 package Programmers.level1;
 
-
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
 public class 개인정보수집유효기간 {
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) {
         String today = "2022.05.19";
         String[] terms = {"A 6", "B 12", "C 3"};
         String[] privacies = {"2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C"};
@@ -17,7 +15,6 @@ public class 개인정보수집유효기간 {
 
     }
     public static int[] solution(String today, String[] terms, String[] privacies) {
-        int[] answer = {};
         String[] todayArr = today.split("\\.");
         int todayCnt = Integer.parseInt(todayArr[0]) * 12 * 28
                 + Integer.parseInt(todayArr[1]) * 28
