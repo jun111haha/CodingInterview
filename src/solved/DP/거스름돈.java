@@ -18,6 +18,9 @@ public class 거스름돈 {
         for(int i=6; i<=tc; i++){
             dp[i] = Math.min(dp[i - 2], dp[i - 5]) + 1;
         }
+
+        System.out.println(dp[6]);
+        System.out.println(dp[8]);
         System.out.println(dp[tc]);
     }
 }
