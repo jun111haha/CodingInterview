@@ -5,6 +5,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
+/*
+4
+3
+2 1 2
+3 2 3 4
+3 4 2 1
+* */
 public class 캠프파이어 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
