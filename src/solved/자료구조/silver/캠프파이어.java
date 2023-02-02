@@ -41,6 +41,7 @@ public class 캠프파이어 {
                 };
             }
 
+            System.out.println(music); //[[1], [1], [], []]
             Set temp = new HashSet();
 
             for(int j = 1; j < str.length; j++) {
@@ -54,6 +55,8 @@ public class 캠프파이어 {
             }
         }
 
+        System.out.println(musicCnt); //2
+        System.out.println(music); //[[1, 2], [1, 2], [1], [1, 2]]
         for (int i = 0; i < N; i++) {
             if(music.get(i).size() == musicCnt) System.out.println(i+1);
         }
