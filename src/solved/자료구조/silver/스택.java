@@ -5,17 +5,17 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
-public class 괄호 {
+public class 스택 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         int tc = Integer.parseInt(br.readLine());
 
+        Stack<Character> stack = new Stack<>();
         for(int i=0; i<tc; i++){
-            Stack<Character> stack = new Stack<>();
-            String str = br.readLine();
-            for(int j=0; j<str.length(); j++){
-                char ch = str.charAt(j);
+            String temp = br.readLine();
+            for(int j=0; j<temp.length(); j++){
+                char ch = temp.charAt(j);
                 if(ch == '('){
                     stack.push(ch);
                 }else{
@@ -30,9 +30,10 @@ public class 괄호 {
 
             if(stack.isEmpty()){
                 sb.append("YES" + "\n");
-            }else{
-                sb.append("NO"  + "\n");
+            }else {
+                sb.append("NO" + "\n");
             }
+            stack.clear();
         }
         System.out.println(sb);
     }

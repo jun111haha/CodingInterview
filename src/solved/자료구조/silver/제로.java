@@ -11,19 +11,15 @@ public class 제로 {
         int tc = Integer.parseInt(br.readLine());
 
         Stack<Integer> stack = new Stack<>();
-        int sum = 0;
         for(int i=0; i<tc; i++){
             int temp = Integer.parseInt(br.readLine());
-            if(temp != 0){
-                stack.push(temp);
-            }else{
+            if (temp == 0) {
                 stack.pop();
+            }else{
+                stack.push(temp);
             }
         }
 
-        for(int i : stack){
-            sum += i;
-        }
-        System.out.println();
+        System.out.println(stack.stream().mapToInt(Integer :: intValue).sum());
     }
 }
