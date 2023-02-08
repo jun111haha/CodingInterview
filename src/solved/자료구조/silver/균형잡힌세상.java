@@ -13,10 +13,9 @@ public class 균형잡힌세상 {
         while (true){
             String input = br.readLine();
             Stack<Character> stack = new Stack<>();
-            if(input.equals(".")) {
+            if(input.equals(".")){
                 break;
             }
-
             for(int i=0; i<input.length(); i++){
                 char ch = input.charAt(i);
                 if(ch == '(' || ch == '['){
@@ -25,32 +24,32 @@ public class 균형잡힌세상 {
                     if(stack.isEmpty()){
                         stack.push(ch);
                         break;
-                    }
-                    if(!stack.isEmpty() && stack.peek() == '('){
-                        stack.pop();
                     }else{
-                        break;
+                        if(!stack.isEmpty() && stack.peek() == '('){
+                            stack.pop();
+                        }else{
+                            break;
+                        }
                     }
                 }else if(ch == ']'){
                     if(stack.isEmpty()){
                         stack.push(ch);
                         break;
-                    }
-                    if(!stack.isEmpty() && stack.peek() == '['){
-                        stack.pop();
                     }else{
-                        break;
+                        if(!stack.isEmpty() && stack.peek() == '['){
+                            stack.pop();
+                        }else{
+                            break;
+                        }
                     }
                 }
             }
-
             if(stack.isEmpty()){
                 sb.append("yes" + "\n");
             }else{
                 sb.append("no" + "\n");
             }
         }
-
         System.out.println(sb);
     }
 }
