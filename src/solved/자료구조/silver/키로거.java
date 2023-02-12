@@ -5,6 +5,32 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
+/*
+1
+<<BP<A>>Cd-
+stack []
+deleteStack []
+stack []
+deleteStack []
+stack [B]
+deleteStack []
+stack [B, P]
+deleteStack []
+stack [B]
+deleteStack [P]
+stack [B, A]
+deleteStack [P]
+stack [B, A, P]
+deleteStack []
+stack [B, A, P]
+deleteStack []
+stack [B, A, P, C]
+deleteStack []
+stack [B, A, P, C, d]
+deleteStack []
+stack [B, A, P, C]
+deleteStack []
+* */
 public class 키로거 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -32,9 +58,9 @@ public class 키로거 {
                 }else{
                     stack.push(temp);
                 }
+                System.out.println("stack " + stack);
+                System.out.println("deleteStack " + deleteStack);
             }
-            System.out.println(stack);
-            System.out.println(deleteStack);
             stack.clear();
             deleteStack.clear();;
         }
