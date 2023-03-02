@@ -19,21 +19,18 @@ public class 카드합체놀이 {
             priorityQueue.add(Long.parseLong(st.nextToken()));
         }
 
-        System.out.println(priorityQueue);
         for(int i=0; i<M; i++){
-            Long temp1 = priorityQueue.poll();
-            Long temp2 = priorityQueue.poll();
+            long temp1 = priorityQueue.poll();
+            long temp2 = priorityQueue.poll();
 
             priorityQueue.add(temp1 + temp2);
             priorityQueue.add(temp1 + temp2);
         }
 
-        long sum = 0;
-        System.out.println(priorityQueue);
+        int sum = 0;
         while (!priorityQueue.isEmpty()){
             sum += priorityQueue.poll();
         }
-
         System.out.println(sum);
     }
 }
