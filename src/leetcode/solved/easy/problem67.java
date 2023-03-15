@@ -1,4 +1,4 @@
-package LeetCode.solved.easy;
+package leetcode.solved.easy;
 
 import java.math.BigInteger;
 

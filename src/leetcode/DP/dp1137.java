@@ -1,4 +1,4 @@
-package LeetCode.DP;
+package leetcode.DP;
 
 public class dp1137 {
     public static void main(String[] args) {

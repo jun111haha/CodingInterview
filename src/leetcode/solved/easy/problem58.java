@@ -1,6 +1,4 @@
-package LeetCode.solved.easy;
-
-import java.util.Arrays;
+package leetcode.solved.easy;
 
 public class problem58 {
     public static void main(String[] args) {

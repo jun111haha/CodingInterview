@@ -1,4 +1,4 @@
-package LeetCode.DP;
+package leetcode.DP;
 
 //1646. Get Maximum in Generated Array
 public class dp1646 {

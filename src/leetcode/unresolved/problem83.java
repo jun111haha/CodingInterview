@@ -1,6 +1,6 @@
-package LeetCode.unresolved;
+package leetcode.unresolved;
 
-import LeetCode.util.ListNode;
+import leetcode.util.ListNode;
 
 public class problem83 {
     public static void main(String[] args) {

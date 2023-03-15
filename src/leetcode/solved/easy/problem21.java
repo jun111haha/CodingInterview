@@ -1,6 +1,6 @@
-package LeetCode.solved.easy;
+package leetcode.solved.easy;
 
-import LeetCode.util.ListNode;
+import leetcode.util.ListNode;
 
 public class problem21 {
     public static void main(String[] args) {

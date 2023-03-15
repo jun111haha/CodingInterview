@@ -1,4 +1,4 @@
-package LeetCode.util;
+package leetcode.util;
 
 import java.util.Objects;
 
