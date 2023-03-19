@@ -1,4 +1,4 @@
-package leetcode.solved.easy;
+package leetcode.easy.solved;
 
 public class problem35 {
     public static void main(String[] args) {

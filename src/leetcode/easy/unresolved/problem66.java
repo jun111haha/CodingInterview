@@ -1,4 +1,4 @@
-package leetcode.unresolved;
+package leetcode.easy.unresolved;
 
 import java.util.Arrays;
 
