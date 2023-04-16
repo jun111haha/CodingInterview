@@ -1,4 +1,4 @@
-package solved.자료구조.silver;
+package solved.자료구조;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,8 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class 카드2 {
+//카드2
+public class silver2164 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
@@ -21,6 +22,6 @@ public class 카드2 {
             queue.add(queue.poll());
         }
 
-        System.out.println(queue.stream().mapToInt(Integer :: intValue).sum());
+        System.out.println(queue.poll());
     }
 }

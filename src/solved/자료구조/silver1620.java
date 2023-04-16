@@ -1,11 +1,13 @@
+package solved.자료구조;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.StringTokenizer;
 
-public class Main {
+//나는야 포켓몬 마스터 이다솜
+public class silver1620 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
