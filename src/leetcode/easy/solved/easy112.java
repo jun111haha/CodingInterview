@@ -1,24 +1,23 @@
 package leetcode.easy.solved;
 
+import leetcode.util.TreeNode;
+
 public class easy112 {
     public static void main(String[] args) {
-        System.out.println(maxProfit(new int[]{7,1,5,3,6,4}));
+        System.out.println(hasPathSum(TreeNode.makeTree(new Integer[]{1,2,3})
+                ,5));
     }
 
-    public static int maxProfit(int[] prices) {
-        int min = Integer.MAX_VALUE;
-        int ans = 0;
-
-        for(int i=0; i<prices.length; i++){
-            if(prices[i] < min){
-                min = prices[i];
-            }
-
-            if(ans < prices[i] - min){
-                ans = prices[i] - min;
-            }
+    public static boolean hasPathSum(TreeNode root, int targetSum) {
+        if(root == null){
+            return false;
         }
 
-        return ans;
+        targetSum -= root.val;
+        if (root.left == null && root.right == null) {
+            return targetSum == 0;
+        }
+
+        return hasPathSum(root.left, targetSum) || hasPathSum(root.right, targetSum);
     }
 }
