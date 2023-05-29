@@ -2,7 +2,6 @@ package leetcode.easy.solved;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class easy1389 {
     public static void main(String[] args) {
