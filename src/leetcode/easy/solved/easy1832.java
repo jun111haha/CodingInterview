@@ -1,7 +1,5 @@
 package leetcode.easy.solved;
 
-import java.util.*;
-
 public class easy1832 {
     public static void main(String[] args) {
         System.out.println(checkIfPangram("hxsdz"));
