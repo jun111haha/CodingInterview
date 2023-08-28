@@ -1,25 +1,35 @@
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.PriorityQueue;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        System.out.println(solution(3, new int[]{10, 100, 20, 150, 1, 100, 200}));
-    }
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
 
-    public static int[] solution(int k, int[] score) {
-        int[] answer = new int[score.length];
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+        int Red = 0;
+        int Green = 1;
+        int Blue = 2;
+        int sum = 0;
 
-        for(int i=0; i<score.length; i++){
-            priorityQueue.add(score[i]);
-            if(priorityQueue.size() > k){
-                priorityQueue.poll();
-            }
+        int[][] color = new int[N][3];
 
-            answer[i] = priorityQueue.peek();
+        for(int i=0; i<N; i++){
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            color[i][Red] = Integer.parseInt(st.nextToken());
+            color[i][Green] = Integer.parseInt(st.nextToken());
+            color[i][Blue] = Integer.parseInt(st.nextToken());
         }
 
-        return answer;
-    }
+        for(int i=1; i<N; i++){
+            color[i][Red] += Math.min(color[i - 1][Green], color[i - 1][Blue]);
+            color[i][Green] += Math.min(color[i - 1][Red], color[i - 1][Blue]);
+            color[i][Blue] += Math.min(color[i - 1][Green], color[i - 1][Red]);
+        }
 
+        sum = Math.min(Math.min(color[N - 1][Red], color[N - 1][Green]), color[N - 1][Blue]);
+        System.out.println(Arrays.deepToString(color));
+    }
 }

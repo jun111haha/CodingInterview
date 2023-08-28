@@ -19,8 +19,21 @@ public class 대충만든자판 {
             }
         }
 
+        for(int i=0; i<targets.length; i++){
+            String strTemp = targets[i];
+            for(int j=0; j<strTemp.length(); j++){
+                char key = strTemp.charAt(j);
+                if(hashMap.containsKey(key)){
+                    answer[i] += hashMap.get(key);
+                }else{
+                    answer[i] = -1;
+                    break;
+                }
 
+            }
+        }
 
+        System.out.println(Arrays.toString(answer));
         return answer;
     }
 
