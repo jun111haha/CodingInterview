@@ -3,28 +3,30 @@ import java.util.Arrays;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        System.out.println(solution("banana"));
+        System.out.println(solution(new String[]{".#...", "..#..", "...#."}));
     }
 
-    public static int[] solution(String s) {
-        int[] answer = new int[s.length()];
+    public static int[] solution(String[] wallpaper) {
+        int[] answer = {};
+        int top = Integer.MAX_VALUE;
+        int left = Integer.MAX_VALUE;
+        int bottom = Integer.MIN_VALUE;
+        int right = Integer.MIN_VALUE;
 
-        for(int i=0; i<s.length(); i++){
-            if(i != 0){
-                int idx = s.substring(0 , i).lastIndexOf(s.charAt(i));
-                System.out.println("i " + i);
-                System.out.println("idx " + idx);
-                if(idx != -1){
-                    answer[i] = i - idx;
-                }else{
-                    answer[i] = idx;
+        for(int i=0; i<wallpaper.length; i++){
+            String wal = wallpaper[i];
+            for(int j=0; j<wal.length(); j++){
+                if(wal.charAt(j) == '#'){
+                    top = Math.min(i , top);
+                    left = Math.min(i + 1, left);
+                    bottom = Math.max(j, bottom);
+                    right = Math.max(j + 1, right);
                 }
-            }else{
-                answer[i] = -1;
             }
         }
 
-        System.out.println(Arrays.toString(answer));
+
+        System.out.println(Arrays.toString(new int[]{top, left, bottom, right}));
         return answer;
     }
 }
