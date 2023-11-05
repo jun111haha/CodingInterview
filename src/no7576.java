@@ -1,16 +1,15 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class no7576 {
-    static int arr[][];
-    static boolean visit[][];
     static int dirX[] = {-1, 0, 1, 0}; // 상 하 좌 우
     static int dirY[] = {0, 1, 0, -1}; // 상 하 좌 우
-
+    static int arr[][];
     static int n, m;
     static Queue<int[]> queue = new LinkedList<>();
 
@@ -19,11 +18,10 @@ public class no7576 {
         StringTokenizer st;
 
         st = new StringTokenizer(br.readLine());
-        n = Integer.parseInt(st.nextToken());
         m = Integer.parseInt(st.nextToken());
+        n = Integer.parseInt(st.nextToken());
 
         arr = new int[n][m];
-        visit = new boolean[n][m];
 
         for(int i=0; i<n; i++){
             st = new StringTokenizer(br.readLine());
@@ -37,6 +35,7 @@ public class no7576 {
         }
 
         System.out.println(bfs());
+        System.out.println(Arrays.deepToString(arr));
     }
 
     private static int bfs(){
@@ -84,6 +83,4 @@ public class no7576 {
         }
         return false;
     }
-
-
 }
