@@ -8,8 +8,8 @@ import java.util.StringTokenizer;
 public class no7576 {
     static int arr[][];
     static boolean visit[][];
-    static int dirX[] = {-1, 0, 1, 0}; // 상 하 좌 우 대각선 상좌, 상우, 하좌, 하우
-    static int dirY[] = {0, 1, 0, -1}; // 상 하 좌 우 대각선 상좌, 상우, 하좌, 하우
+    static int dirX[] = {-1, 0, 1, 0}; // 상 하 좌 우
+    static int dirY[] = {0, 1, 0, -1}; // 상 하 좌 우
 
     static int n, m;
     static Queue<int[]> queue = new LinkedList<>();
