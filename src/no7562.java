@@ -38,7 +38,7 @@ public class no7562 {
             sb.append(arr[x2][y2]).append("\n");
         }
 
-        System.out.println(sb);
+        System.out.println(sb);//
     }
 
     private static void BFS(){
