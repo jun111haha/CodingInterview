@@ -6,8 +6,8 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class no4963 {
-    static int dirX[] = {0, 0, -1 ,1, -1, 1, -1, 1};
-    static int dirY[] = {-1, 1, 0, 0, 1, 1, -1, -1};
+    static int[] dirX = {0, 0, -1 ,1, -1, 1, -1, 1};
+    static int[] dirY = {-1, 1, 0, 0, 1, 1, -1, -1};
 
     static int[][] arr;
     static boolean[][] visit;
@@ -27,7 +27,6 @@ public class no4963 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
-
 
         String str = "";
         while (!(str = br.readLine()).equals("0 0")){

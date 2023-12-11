@@ -6,61 +6,85 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Main {
-    static int arr[][];
-    static boolean visit[][];
-    static int dirX[] = {-1, 0, 1, 0}; // 상 하 좌 우 대각선 상좌, 상우, 하좌, 하우
-    static int dirY[] = {0, 1, 0, -1}; // 상 하 좌 우 대각선 상좌, 상우, 하좌, 하우
+    static int[] dirX = {0, 0, -1 ,1, -1, 1, -1, 1};
+    static int[] dirY = {-1, 1, 0, 0, 1, 1, -1, -1};
+
+    static int[][] arr;
+    static boolean[][] visit;
 
     static int n, m;
-    static Queue<int[]> queue = new LinkedList<>();
+    static class Node{
+        int x;
+        int y;
+
+        Node(int x, int y){
+            this.x = x;
+            this.y = y;
+        }
+    }
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        StringTokenizer st;
 
-        n = Integer.parseInt(st.nextToken());
-        m = Integer.parseInt(st.nextToken());
+        String str = "";
+        while (!(str = br.readLine()).equals("0 0")){
+            st = new StringTokenizer(str);
 
-        arr = new int[n][m];
-        visit = new boolean[n][m];
+            n = Integer.parseInt(st.nextToken()); // 너비
+            m = Integer.parseInt(st.nextToken()); // 높이
+            arr = new int[m][n];
+            visit = new boolean[m][n];
 
-        for(int i=0; i<n; i++){
-            String str = br.readLine();
-            for(int j=0; j<m; j++){
-                arr[i][j] = str.charAt(j) - '0';
+            for(int i=0; i<m; i++){
+                st = new StringTokenizer(br.readLine());
+                for(int j=0; j<n; j++){
+                    arr[i][j] = Integer.parseInt(st.nextToken());
+                }
             }
+
+            int cnt = 0;
+            for(int i=0; i<m; i++){
+                for(int j=0; j<n; j++){
+                    if(!visit[i][j] && arr[i][j] == 1){
+                        bfs(i ,j);
+                        cnt++;
+                    }
+                }
+            }
+
+            System.out.println(cnt);
         }
 
-        for(int i=0; i<n; i++){
-            for(int j=0; j<m; j++){
-                queue.offer(new int[]{0,0});
+    }
 
-                while (!queue.isEmpty()){
-                    int[] temp = queue.poll();
-                    int tempX = temp[0];
-                    int tempY = temp[1];
 
-                    for(int dir=0; dir<4; dir++){
-                        int nx = tempX + dirX[dir];
-                        int ny = tempY + dirY[dir];
+    private static void bfs(int x, int y){
+        Queue<Node> queue = new LinkedList<>();
+        visit[x][y] = true;
+        queue.offer(new Node(x, y));
 
-                        if (nx < 0 || nx >= n || ny < 0 || ny >= m){
-                            continue;
-                        }
+        while (!queue.isEmpty()){
+            Node node = queue.poll();
+            int nx = node.x;
+            int ny = node.y;
 
-                        if(visit[nx][ny] || arr[nx][ny] != 1){
-                            continue;
-                        }
+            for(int i=0; i<8; i++){
+                int nowX = nx + dirX[i];
+                int nowY = ny + dirY[i];
 
-                        queue.offer(new int[]{nx, ny});
-                        visit[nx][ny] = true;
-                        arr[nx][ny] = arr[tempX][tempY] + 1;
-                    }
+                if(nowX >= 0 && nowY >= 0 && nowX < m && nowY < n
+                && !visit[nowX][nowY] && arr[nowX][nowY] == 1){
+
+                    visit[nowX][nowY] = true;
+                    queue.offer(new Node(nowX, nowY));
+
                 }
 
             }
+
+
         }
 
-        System.out.println(arr[n-1][m-1]);
     }
 }
