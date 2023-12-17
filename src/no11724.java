@@ -1,57 +1,59 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class no2644 {
+public class no11724 {
     static int N, M;
-    static int[][] graph;
-    static int[] dist;
+    static int[][] arr;
+    static boolean[] visit;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int tc = Integer.parseInt(br.readLine());
-
         StringTokenizer st = new StringTokenizer(br.readLine());
+
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
 
-        graph = new int[tc + 1][tc + 1];
-        dist = new int[tc + 1];
+        arr = new int[N + 1][N + 1];
+        visit = new boolean[N + 1];
 
-        int K = Integer.parseInt(br.readLine());
-        for(int i=0; i<K; i++){
+        for(int j=0; j<M; j++){
             st = new StringTokenizer(br.readLine());
             int x = Integer.parseInt(st.nextToken());
             int y = Integer.parseInt(st.nextToken());
-            graph[x][y] = graph[y][x] = 1;
+
+            arr[x][y] = arr[y][x] = 1;
+         }
+
+        int cnt = 0;
+        for(int i=1; i<=N; i++){
+            if(!visit[i]){
+                bfs(i);
+                cnt++;
+            }
         }
 
-
-        bfs(N);
-        System.out.println(dist[M]);
-        System.out.println(Arrays.deepToString(graph));
+        System.out.println(cnt);
     }
 
-    public static void bfs(int index){
+    private static void bfs(int start){
         Queue<Integer> queue = new LinkedList<>();
-        queue.add(index);
+        visit[start] = true;
+        queue.offer(start);
 
         while (!queue.isEmpty()){
             int temp = queue.poll();
 
-            if(temp == M) break;
-
             for(int i=1; i<=N; i++){
-                if(graph[temp][i] == 1 && dist[i] == 0){
+                if(arr[temp][i] == 1 && !visit[i]){
+                    visit[i] = true;
                     queue.add(i);
-                    dist[i] = dist[temp] + 1;
                 }
             }
-
         }
+
     }
 }
